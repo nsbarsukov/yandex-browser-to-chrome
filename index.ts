@@ -1,14 +1,20 @@
-import { readFileSync, writeFileSync } from "fs";
-import { generateTableRows, getChromeToYandexMap } from "./utils";
+import {readFileSync, writeFileSync} from "fs";
 
-const desktopUserAgents = readFileSync(
-  "./desktop-ua.txt", // Path to file with one UA string per line
-  "utf-8",
-).split("\n");
-const mobileUserAgents = readFileSync(
-  "./mobile-ua.txt", // Path to file with one UA string per line
-  "utf-8",
-).split("\n");
+import {generateTableRows, getChromeToYandexMap} from "./utils";
+
+const desktopUserAgents = [
+    "data/desktop.txt", // https://useragents.io/explore/devices/types/desktop/maker/yandex-llc-0b6
+    "data/seolik-desktop.txt" // https://seolik.ru/user-agents-list
+]
+    .map(x => readFileSync(x, "utf-8").split("\n"))
+    .flat();
+
+const mobileUserAgents = [
+    'data/mobile.txt', // https://useragents.io/explore/devices/types/mobile-phone/maker/yandex-llc-0b6
+    "data/seolik-mobile.txt" // https://seolik.ru/user-agents-list
+]
+    .map(x => readFileSync(x, "utf-8").split("\n"))
+    .flat();
 
 const desktopChromeToYandexMap = getChromeToYandexMap(desktopUserAgents);
 const mobileChromeToYandexMap = getChromeToYandexMap(mobileUserAgents);

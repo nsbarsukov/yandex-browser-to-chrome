@@ -4,7 +4,8 @@
   "description": "TODO",
   "main": "index.js",
   "scripts": {
-    "go": "ts-node ./index.ts"
+    "prestart": "ts-node ./utils/crawl-database.ts",
+    "start": "ts-node ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/nsbarsukov/yandex-browser-to-chrome#readme",
   "devDependencies": {
+    "jsonrepair": "^3.11.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
