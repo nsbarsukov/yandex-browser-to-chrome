@@ -52,4 +52,4 @@ ${TABLE_STYLES}
 `.trim();
 
 writeFileSync("index.html", reportContent);
-writeFileSync("index.md", reportContent);
+writeFileSync("README.md", reportContent);
