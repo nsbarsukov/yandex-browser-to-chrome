@@ -1,14 +1,3 @@
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid lightgray;
-    padding: 10px;
-  }
- </style>
-
-
 <h1>Desktop</h1>
 <table>
     <thead>

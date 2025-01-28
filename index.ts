@@ -32,8 +32,6 @@ const TABLE_STYLES = `
 `;
 
 const reportContent = `
-${TABLE_STYLES}
-
 <h1>Desktop</h1>
 <table>
     <thead>
@@ -51,5 +49,5 @@ ${TABLE_STYLES}
 </table>
 `.trim();
 
-writeFileSync("index.html", reportContent);
+writeFileSync("index.html", TABLE_STYLES + '\n' + reportContent);
 writeFileSync("README.md", reportContent);
