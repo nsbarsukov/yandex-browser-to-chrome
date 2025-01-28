@@ -31,9 +31,7 @@ const TABLE_STYLES = `
  </style>
 `;
 
-writeFileSync(
-  "index.html",
-  `
+const reportContent = `
 ${TABLE_STYLES}
 
 <h1>Desktop</h1>
@@ -51,5 +49,7 @@ ${TABLE_STYLES}
     </thead>
     ${generateTableRows(mobileChromeToYandexMap)}
 </table>
-`,
-);
+`.trim();
+
+writeFileSync("index.html", reportContent);
+writeFileSync("index.md", reportContent);
